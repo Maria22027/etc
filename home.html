@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h1 class="titulo">Usuários </h1> <a href="{% url 'add_usuario' %}" class="btn btn-success">Adicionar</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for user in usuarios %}
+      <tr>
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.nome }}</td>
+        <td>{{ user.email }}</td>
+        <td><a href="{% url 'editar_usuario' user.id %}" class="btn btn btn-warning">Editar</a>
+            <a href="{% url 'excluir_usuario' user.id %}" class="btn btn btn-danger">Excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

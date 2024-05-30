@@ -1,0 +1,664 @@
+Microsoft Windows [versão 10.0.19042.928]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\Vs Studio\Desktop\Django-Aula01>py -m venv venv
+
+C:\Users\Vs Studio\Desktop\Django-Aula01>venv\scripts\activate
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>deactivate
+C:\Users\Vs Studio\Desktop\Django-Aula01>venv\scripts\activate
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>py -m pip install django 
+Collecting django
+  Downloading Django-5.0.3-py3-none-any.whl.metadata (4.2 kB)
+Collecting asgiref<4,>=3.7.0 (from django)
+  Downloading asgiref-3.8.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Using cached sqlparse-0.4.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting tzdata (from django)
+  Using cached tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading Django-5.0.3-py3-none-any.whl (8.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 MB 6.1 MB/s eta 0:00:00
+Downloading asgiref-3.8.0-py3-none-any.whl (23 kB)
+Using cached sqlparse-0.4.4-py3-none-any.whl (41 kB)
+Using cached tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.8.0 django-5.0.3 sqlparse-0.4.4 tzdata-2024.1
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>django-admin --version
+5.0.3
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>django-admin startproject projeto1
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>django-admin startproject projeto1 .
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>py manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 14:45:10
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[20/Mar/2024 14:45:27] "GET / HTTP/1.1" 200 10629
+Not Found: /favicon.ico
+[20/Mar/2024 14:45:28] "GET /favicon.ico HTTP/1.1" 404 2112
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>py manage.py startapp app
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>py manage.py runserver               
+Watching for file changes with StatReloader
+Performing system checks...
+
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 16:12:44
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Not Found: /
+[20/Mar/2024 16:13:14] "GET / HTTP/1.1" 404 2224
+[20/Mar/2024 16:13:34] "GET /app HTTP/1.1" 301 0
+[20/Mar/2024 16:13:34] "GET /app/ HTTP/1.1" 200 11
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 16:31:00
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 3
+    from django.Temolate
+                        ^
+SyntaxError: invalid syntax
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 3, in <module>
+    from django.Temolate import loader
+ModuleNotFoundError: No module named 'django.Temolate'
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 6
+    pagina =
+             ^
+SyntaxError: invalid syntax
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 3, in <module>
+    from django.Template import loader
+ModuleNotFoundError: No module named 'django.Template'
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 3, in <module>
+    from django.Template import loader
+ModuleNotFoundError: No module named 'django.Template'
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\projeto1\urls.py", line 22, in <module>
+    path('', include('app.urls')),
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\venv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vs Studio\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py", line 3, in <module>
+    from django.Template import loader
+ModuleNotFoundError: No module named 'django.Template'
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 16:32:23
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 16:32:43
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\Vs Studio\Desktop\Django-Aula01\app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 20, 2024 - 16:32:46
+Django version 5.0.3, using settings 'projeto1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Not Found: /
+[20/Mar/2024 16:32:48] "GET / HTTP/1.1" 404 2224
+Not Found: /home
+[20/Mar/2024 16:32:59] "GET /home HTTP/1.1" 404 2254
+[20/Mar/2024 16:33:04] "GET /app/ HTTP/1.1" 200 266
+[20/Mar/2024 16:33:29] "GET /app/ HTTP/1.1" 200 266
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>deactvate
+'deactvate' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+(venv) C:\Users\Vs Studio\Desktop\Django-Aula01>deactivate
+C:\Users\Vs Studio\Desktop\Django-Aula01>  
